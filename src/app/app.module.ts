@@ -15,6 +15,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { DashboardstatsComponent } from './components/dashboardstats/dashboardstats.component';
+import { OrderlistComponent } from './components/orderlist/orderlist.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DashboardstatsComponent } from './components/dashboardstats/dashboardst
     PortfolioComponent,
     OrdersComponent,
     TopNavComponent,
-    DashboardstatsComponent
+    DashboardstatsComponent,
+    OrderlistComponent
   ],
   imports: [
     BrowserModule,
