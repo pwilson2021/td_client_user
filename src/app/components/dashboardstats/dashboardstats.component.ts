@@ -12,5 +12,8 @@ export class DashboardstatsComponent implements OnInit {
   ngOnInit(): void {
     
   }
+  portfolio_number = 3;
+  wallet = 300;
+  order_number = 4
 
 }
