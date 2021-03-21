@@ -1,0 +1,28 @@
+.logo {
+    position: relative;
+    font-size: 30px;
+    text-align: left;
+    color: #f7c53f;
+    font-weight: 100;
+    padding: 1.5rem;
+}
+.side-nav {
+    width: 200px;
+    height: 100%;
+    left: 0px;
+    background-color: #5692b7;
+}
+
+.menu {
+    position: relative;
+    top: 100px;
+}
+
+.menu a {
+    display: block;
+    text-align: left;
+    color: #f7c53f;
+    font-weight: 100;
+    margin: 1.5rem;
+
+  }
