@@ -1,6 +1,30 @@
-<p>orderlist works!</p>
-
-
-<ul *ngFor="let order of orders">
+<!-- <ul *ngFor="let order of orders">
     <li>{{order.order_type}}</li>
-</ul>
+</ul> -->
+
+<div class="order-list">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Order ID</th>
+                <th scope="col">Order Type</th>
+                <th scope="col">Stock</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Value</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let order of orders; index as i">
+                <td>{{order.id}}</td>
+                <td>{{order.order_type}}</td>
+                <td>{{order.order_stock}}</td>
+                <td>{{order.order_quantity}}</td>
+                <td>{{order.price}}</td>
+                <td>{{order.order_value}}</td>
+                <td>{{order.order_status}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
