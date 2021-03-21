@@ -1,0 +1,17 @@
+.stats-div{
+    position: absolute;
+    top: 100px;
+    /* margin: auto; */
+    left: 20rem;
+    text-align: center;
+
+}
+.stats-card{
+    width: 200px;
+    height: 120px;
+    box-shadow: 0 5px 7px 0 rgba(0, 0, 0, 0.16);
+    font-size: 20px;
+    font-weight: 200;
+    text-align: center;
+
+}

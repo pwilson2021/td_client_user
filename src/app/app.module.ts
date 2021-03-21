@@ -4,14 +4,17 @@ import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './components/login/login.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { NavigationComponent } from './navigation/navigation.component';
-import { PortfolioComponent } from './portfolio/portfolio.component';
-import { OrdersComponent } from './orders/orders.component';
+import {MatCardModule} from '@angular/material/card'; 
+import { MatButtonModule} from '@angular/material/button';   
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { OrdersComponent } from './components/orders/orders.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { TopNavComponent } from './top-nav/top-nav.component';
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { DashboardstatsComponent } from './components/dashboardstats/dashboardstats.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,8 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     NavigationComponent,
     PortfolioComponent,
     OrdersComponent,
-    TopNavComponent
+    TopNavComponent,
+    DashboardstatsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,9 @@ import { TopNavComponent } from './top-nav/top-nav.component';
     ReactiveFormsModule,
     AppRoutingModule,
     NgbModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
