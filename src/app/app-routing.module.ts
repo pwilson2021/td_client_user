@@ -14,18 +14,23 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'dashboard',component: DashboardComponent},
-  {path: 'portfolio', component: PortfolioComponent, children: [
-    {
-      path: 'portfolio-form',
-      component: PortfolioFormComponent
-    }
-  ]},
-  {path: 'orders', component: OrdersComponent, children: [
-    {
-      path: 'order-form',
-      component: OrderFormComponent
-    }
-  ]}
+  {path: 'orders', component: OrdersComponent},
+  {path: 'order-form', component: OrderFormComponent},
+  {path: 'portfolio', component: PortfolioComponent},
+  {path: 'portfolio-form', component: PortfolioFormComponent},
+
+  // {path: 'portfolio', component: PortfolioComponent, children: [
+  //   {
+  //     path: 'portfolio-form',
+  //     component: PortfolioFormComponent
+  //   }
+  // ]},
+  // {path: 'orders', component: OrdersComponent, children: [
+  //   {
+  //     path: 'order-form',
+  //     component: OrderFormComponent
+  //   }
+  // ]}
 ];
 
 @NgModule({
