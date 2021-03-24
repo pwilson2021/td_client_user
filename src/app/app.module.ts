@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { BootstrapIconsModule } from 'ng-bootstrap-icons';
+import { CommonModule } from '@angular/common';
+import { PlusCircleFill } from 'ng-bootstrap-icons/icons';
 import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +23,10 @@ import { OrderlistComponent } from './components/orderlist/orderlist.component';
 import { OrderFormComponent } from './components/order-form/order-form.component';
 import { PortfolioFormComponent } from './components/portfolio-form/portfolio-form.component';
 import { RegisterComponent } from './components/register/register.component';
+
+const icons = {
+  PlusCircleFill
+};
 
 @NgModule({
   declarations: [
@@ -45,7 +52,9 @@ import { RegisterComponent } from './components/register/register.component';
     NgbModule,
     BrowserAnimationsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    BootstrapIconsModule.pick(icons),
+    CommonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
