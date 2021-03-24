@@ -18,7 +18,4 @@ export class OrderlistComponent implements OnInit {
 
   orders: any = [];
   //orders: Order[];
-
-
-
 }

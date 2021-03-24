@@ -12,4 +12,6 @@ export class TopNavComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  today: number = Date.now();
+
 }
