@@ -6,13 +6,25 @@
     </div>
 
     <!-- Form -->
-    <div class="container col-3 mx-5" style="margin: 100px;">
+    <div class="container col-3 mx-5" style="margin-left: 20px;">
         <div class="card" style="border-radius: 10px;">
             <div class="card-title">
-                <h3 class="text-center" style="margin: 10%;"> Sign In </h3> 
+                <h3 class="text-center" style="margin: 10%;"> Sign Up </h3> 
             </div>
             <div class="card-body" style="margin: 10%;">
-                <form #login="ngForm" (ngSubmit)="submit(login)" >
+                <form (ngSubmit)="submit(register)" #register="ngForm">
+                  <div class="form-group">
+                    <label for="firstName">First Name</label>
+                      <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstname" #firstName="ngModel" class="form-control" required>
+                      <!-- <div *ngIf="firstName.touched" class="alert alert-danger"> First Name required</div> -->
+                    </div>
+  
+                    <div class="form-group">
+                      <label for="lastName">Last Name</label>
+                      <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastname" #lastName="ngModel" class="form-control" required>
+                      <!-- <div *ngIf="lastName.touched" class="alert alert-danger"> Last Name required</div> -->
+                    </div>
+  
                     <div class="form-group">
                         <label for="email">Email address</label>
                         <input type="email" id="email" name="email" [(ngModel)]="user.email" #email="ngModel" class="form-control" required>
@@ -25,11 +37,11 @@
                         <input type="password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" required>
                         <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Password Invalid</div>
                     </div>
+  
                     <div class="form-group form-check">
-                        <button type="submit" class="btn btn-primary col-6 offset-3" style="border-radius: 10px;" [disabled]="!login.valid">Login</button>
+                        <button type="submit" class="btn btn-primary col-6 offset-3" style="border-radius: 10px;" [disabled]="register.invalid">Create an account</button>
                     </div>
-                    <h5 class="text-center"> Don't have an account? <a routerLink="/register">Sign Up</a></h5>
-
+                    <h5>Already have an account? <a routerLink="/login"> Sign In </a></h5>
                 </form>
             </div>
         </div>

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+import {UserService} from '../../services/user.service';
+import {User} from '../../domain/user';
 
 
 @Component({
@@ -7,12 +11,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
+  constructor(private userService : UserService, private router: Router){}
+  
+  ngOnInit(){
+  }
+  user = {
+    email: '',
+    password:''
+  };
 
-  constructor() { }
+  // submit(login: NgForm){
+  //   this.user.email = login.value.email;
+  //   this.user.password = login.value.password;
+  //   console.log(this.user);  
+  // }
 
-
-
-  ngOnInit(): void {
+  submit(login: NgForm){
+    //console.log(this.user);
+    this.userService.login(this.user.email, this.user.password);
+    console.log(this.user.email, this.user.password);
+    //this.user = new User();
+    this.router.navigate(['/dashboard']);
   }
 
 }
