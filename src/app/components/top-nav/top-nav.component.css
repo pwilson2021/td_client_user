@@ -1,0 +1,14 @@
+.topnav{
+    display: flex;
+    position: relative;
+    left: 10rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.pageTitle {
+    font-size: 2rem;
+    font-weight: bold;
+}
