@@ -11,18 +11,21 @@ import {Order} from '../../domain/order';
 })
 export class OrderFormComponent implements OnInit {
 
+  products: any = [];
   constructor(private orderService : OrderService, private router: Router){}
 
-  ngOnInit(): void {
+  ngOnInit(){
+    this.products = this.orderService.getProducts();
+
   }
 
   order: Order = {
     id: 0,
-    order_type: '',
-    order_stock: '',
-    order_quantity: 0,
     price: 0,
-    order_value: 0,
+    quantity: 0,
+    product: '',
+    order_type: '',
+    //order_value: 0,
     order_status: '',
   };
 
