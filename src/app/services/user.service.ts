@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
 import {User} from '../domain/user';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -8,10 +11,15 @@ import {User} from '../domain/user';
 
 export class UserService {
   baseUrl = 'https://simba-client-connectivity.herokuapp.com'
+  // private userSubject: BehaviorSubject<User>;
+  // public user: Observable<User>;
 
-  private users: User[] = [];
+ //private users: User[] = [];
 
-  constructor( private http: HttpClient) { }
+  constructor( private http: HttpClient, private router: Router) { 
+    // this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
+    // this.user = this.userSubject.asObservable();
+  }
   
   // register(user:User){
   //   this.users.push(user);
@@ -23,8 +31,21 @@ export class UserService {
   //   console.log(this.users);
   // }
 
+  // login(email: string, password: string){
+  //   return this.http.post(this.baseUrl+'/login/', {email, password})
+  // }
+
+  // login(email: string, password: string){
+  //   return this.http.post<User>(this.baseUrl+'/login/', {email, password})
+  //   .pipe(map(user => {
+  //     localStorage.setItem('user', JSON.stringify(user));
+  //     this.userSubject.next(user);
+  //     return user;
+  //   }));
+  // }
+
   login(email: string, password: string){
-    return this.http.post(this.baseUrl+'/login', {email, password})
+    return this.http.post(this.baseUrl+'/login/', {email, password})
   }
 
   register(user: User){
