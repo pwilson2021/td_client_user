@@ -8,15 +8,57 @@
         <div class="card-body">
             <form (ngSubmit)="submit(order)" #order="ngForm">
               <div class="form-group">
+                <label for="product">Select Product</label>
                   <select class="form-control" name="product" id="product" 
                   required
                   [(ngModel)]="products">
                       <option *ngFor="let prod of products" [value]="prod">{{prod}}</option>
                   </select>
               </div>
+              <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                          <input type="number" class="form-control" name="price" id="price" 
+                          required
+                          [ngModel] placeholder="Price"
+                          />
+                      </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                          <input type="number" class="form-control" name="quantity" id="quantity" 
+                          required
+                          [ngModel] placeholder="Quantity"
+                          />
+                      </div>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <label for="product">Portfolio</label>
+                    <select class="form-control" name="portfolio" id="portfolio" 
+                    required
+                    [ngModel]>
+                        <option *ngFor="let port of portfolio" [value]="port">{{port}}</option>
+                    </select>
+                   </div>
+                </div>
+                <div class="col">
+                  <div class="form-group">
+                    <label for="order_type">Order Type</label>
+                    <select class="form-control" name="order_type" id="order_type" 
+                    required
+                    [ngModel]>
+                        <option *ngFor="let type of order_type" [value]="type">{{type}}</option>
+                    </select>
+                    </div>
+                </div>
+            </div>
 
                 <div class="form-group form-check">
-                    <button type="submit" class="btn btn-primary col-6 offset-3" style="border-radius: 10px;" [disabled]="order.invalid">CREATE ORDER</button>
+                    <button type="submit" class="btn btn-primary col-6 offset-3" style="border-radius: 10px;">CREATE ORDER</button>
                 </div>
             </form>
         </div>

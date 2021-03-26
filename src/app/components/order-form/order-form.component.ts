@@ -12,6 +12,8 @@ import {Order} from '../../domain/order';
 export class OrderFormComponent implements OnInit {
 
   products: any = [];
+  order_type = ['BUY', 'SELL'];
+  portfolio = ['A', 'B', 'C'];
   constructor(private orderService : OrderService, private router: Router){}
 
   ngOnInit(){
@@ -27,6 +29,7 @@ export class OrderFormComponent implements OnInit {
     order_type: '',
     //order_value: 0,
     order_status: '',
+    //portfolio: '',
   };
 
   submit(order: NgForm){
