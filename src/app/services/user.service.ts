@@ -48,6 +48,15 @@ export class UserService {
     return this.http.post(this.baseUrl+'/login/', {email, password})
   }
 
+  //Joe's idea, you can try it out. Try for the registration too.
+  // login(email: string, password: string){
+  //   return this.http.post(this.baseUrl+'/login/', {email: email, password: password}).subscribe(res => {
+    //   console.log(res); // we can send to reporting service from here.
+    // }, error => {
+    //   console.log('Couldn\'t Login. Something went wrong!') // Can go to reporting service.
+    // })
+  // }
+
   register(user: User){
     return this.http.post(this.baseUrl+'/api/users', user)
   }

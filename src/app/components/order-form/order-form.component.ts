@@ -36,4 +36,6 @@ export class OrderFormComponent implements OnInit {
     this.router.navigate(['/orders']);
   }
 
+  pageTitle= 'Order';
+
 }
