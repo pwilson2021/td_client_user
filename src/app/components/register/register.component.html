@@ -17,7 +17,7 @@
                     <label for="firstName">First Name</label>
                       <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstname" #firstName="ngModel" class="form-control" minlength="3" required>
                       <ng-container  *ngIf="firstName.invalid && firstName.touched">
-                        <small class="alert alert-danger" *ngIf="firstName.errors.minlength"> First Name Invalid! </small>
+                        <small class="alert alert-danger" *ngIf="firstName.errors.required || firstName.errors.minlength"> First Name Invalid! </small>
                     </ng-container>
                     </div>
   
@@ -25,7 +25,7 @@
                       <label for="lastName">Last Name</label>
                       <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastname" #lastName="ngModel" class="form-control" minlength="3" required>
                       <ng-container  *ngIf="lastName.invalid && lastName.touched">
-                        <small class="alert alert-danger" *ngIf="lastName.errors.minlength"> Last Name Invalid! </small>
+                        <small class="alert alert-danger" *ngIf="lastName.errors.required || lastName.errors.minlength"> Last Name Invalid! </small>
                     </ng-container>
                     </div>
   
