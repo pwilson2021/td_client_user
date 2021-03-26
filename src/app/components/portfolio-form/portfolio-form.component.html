@@ -1,1 +1,26 @@
-<p>portfolio-form works!</p>
+<app-top-nav></app-top-nav>
+<app-navigation></app-navigation>
+
+<div class="container col-4 mx-2 portfolio">
+    <div class="card" style="border-radius: 10px; border: 2px solid black;">
+      <div class="card-title">
+        <h3 class="text-center pt-5"> Create a Portfolio </h3> 
+      </div>
+      <div class="card-body">
+        <form (ngSubmit)="submit(portfolio)" #portfolio="ngForm">
+          <div class="form-group px-5">
+            <!-- <input type="text" id="portfolio" name="portfolio" class="form-control" required>
+             -->
+            <input type="text" ngModel name="portfolio" #portfolio="ngModel" (ngModel)="portfolio" class="form-control" placeholder="Portfolio Name" required>
+            <div *ngIf ="portfolio.invalid && (portfolio.dirty || portfolio.touched)" class="alert alert-danger">
+              <div *ngIf ="portfolio.touched && portfolio.invalid"> Can't be empty </div>
+          </div>
+          </div>
+          
+          <div class="form-group mt-5">
+            <button type="submit" class="btn btn-primary col-6 offset-3" style="border-radius: 10px;" [disabled]="portfolio.invalid">submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+</div>

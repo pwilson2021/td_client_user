@@ -21,22 +21,27 @@ export class OrderFormComponent implements OnInit {
 
   }
 
-  order: Order = {
-    id: 0,
-    price: 0,
-    quantity: 0,
-    product: '',
-    order_type: '',
-    //order_value: 0,
-    order_status: '',
-    //portfolio: '',
-  };
+  // order: Order = {
+  //   id: 0,
+  //   price: 0,
+  //   quantity: 0,
+  //   product: '',
+  //   order_type: '',
+  //   //order_value: 0,
+  //   order_status: '',
+  //   //portfolio: 'BUY',
+  // };
+
+
+  
 
   submit(order: NgForm){
-    console.log(this.order);
-    this.orderService.addOrder(this.order);
+    console.log(order.value.products);
+    //this.orderService.addOrder(order);
     // //this.user = new User();
     this.router.navigate(['/orders']);
   }
+
+  pageTitle= 'Order';
 
 }

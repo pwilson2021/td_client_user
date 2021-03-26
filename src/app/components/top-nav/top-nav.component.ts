@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {UserService} from '../../services/user.service';
+import {StorageService} from '../../services/storage.service';
+
+
 
 @Component({
   selector: 'app-top-nav',
@@ -7,11 +11,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private userService : UserService, private storageService: StorageService) { }
+  user: any;
+  firstName: any;
 
   ngOnInit(): void {
+    this.user = this.storageService.getInfo("userObj");
+    this.firstName = this.user.firstname;
+    console.log("This is a logged in user " + this.user);
+
   }
 
   today: number = Date.now();
+  logout(){
+    this.userService.logout();
+  }
 
 }

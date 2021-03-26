@@ -28,7 +28,6 @@ export class RegisterComponent implements OnInit {
     console.log(this.user);
     this.userService.register(this.user);
     //this.user = new User();
-    this.router.navigate(['/login']);
   }
 
 }
