@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import {UserService} from '../../services/user.service';
-import {User} from '../../domain/user';
 
 
 @Component({
@@ -32,7 +31,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(this.user.email, this.user.password);
     console.log({
       Email: this.user.email, 
-      password: this.user.password
+      "password: ": this.user.password
     });
     //this.user = new User();
     this.router.navigate(['/dashboard']);
