@@ -5,15 +5,16 @@
     <div class="card" style="border-radius: 10px;">
         <div class="card-title">
             <h3 class="text-center" style="margin: 10%;"> Create an Order </h3> 
+            <!-- added this -->
+            <!-- <p>{{newOrder.product}}</p> -->
         </div>
         <div class="card-body">
             <form (ngSubmit)="submit(order)" #order="ngForm">
               <div class="form-group">
                 <label for="product">Select Product</label>
-                  <select class="form-control" name="product" id="product" 
-                  required
-                  [(ngModel)]="products">
-                      <option *ngFor="let prod of products" [value]="prod">{{prod}}</option>
+                  <select class="form-control" id="product"
+                  [(ngModel)] = "newOrder.product" name="product">
+                      <option *ngFor="let product of products" [value]="product">{{product}}</option>
                   </select>
               </div>
               <div class="row">
@@ -21,7 +22,7 @@
                     <div class="form-group">
                           <input type="number" class="form-control" name="price" id="price" 
                           required
-                          [ngModel] placeholder="Price"
+                          [(ngModel)]="newOrder.price" placeholder="Price"
                           />
                       </div>
                   </div>
@@ -29,7 +30,7 @@
                     <div class="form-group">
                           <input type="number" class="form-control" name="quantity" id="quantity" 
                           required
-                          [ngModel] placeholder="Quantity"
+                          [(ngModel)]="newOrder.quantity" placeholder="Quantity"
                           />
                       </div>
                   </div>
@@ -41,7 +42,7 @@
                     <label for="product">Portfolio</label>
                     <select class="form-control" name="portfolio" id="portfolio" 
                     required
-                    [ngModel]>
+                    [(ngModel)] ="newOrder.portfolio">
                         <option *ngFor="let port of portfolio" [value]="port">{{port}}</option>
                     </select>
                    </div>
@@ -51,7 +52,7 @@
                     <label for="order_type">Order Type</label>
                     <select class="form-control" name="order_type" id="order_type" 
                     required
-                    [ngModel]>
+                    [(ngModel)]="newOrder.order_type">
                         <option *ngFor="let type of order_type" [value]="type">{{type}}</option>
                     </select>
                     </div>
