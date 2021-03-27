@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
 import {Order} from '../domain/order';
 import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderService {
+  baseUrl = 'https://simba-client-connectivity.herokuapp.com'
+  response: any;
 
-  // private products = ['AAPL', 'MSFT',
-  //           'NFLX', 'GOOGL', 'TSLA', 'IBM', 'ORCL', 'AMZN'];
+  // private products = [];
+  constructor( private http: HttpClient, private router: Router) { }
 
   private orders: Order[] = [
     {id: 1, order_type: "Buy", 
@@ -30,20 +33,40 @@ export class OrderService {
       order_status: "Validated" }
   ];
 
-  constructor(private router: Router) { }
-
   // public getProducts(){
   //   return this.products;
   // }
 
-  public getOrders(): Order[]{
-    return this.orders;
+  // public getOrders(): Order[]{
+  //   return this.orders;
+  // }
+
+  // addOrder(order:Order){
+  //   this.orders.push(order);
+  //   this.router.navigate(['/orders']);
+
+  // }
+
+  public getOrders(){
+    return this.http.get(`${this.baseUrl}/api/orders`).subscribe(res =>{
+      
+    })
   }
 
   addOrder(order:Order){
-    this.orders.push(order);
-    this.router.navigate(['/orders']);
+    return this.http.post(`${this.baseUrl}/api/orders`, order).subscribe(res => {
+      this.response = res;
+      if(this.response.code == 200){
+        alert("Order placed");
+        this.router.navigate(['/orders']);
+      }
+      else{
+        console.log("Order creation failed");
+      }
 
+    }, error => {
+      console.log('Couldn\'t place order. Something went wrong!')
+    })
   }
 
 }

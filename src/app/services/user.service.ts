@@ -12,26 +12,22 @@ export class UserService {
   baseUrl = 'https://simba-client-connectivity.herokuapp.com'
   response: any;
 
-  constructor( private http: HttpClient, private router: Router, private storageService: StorageService) { 
-    // this.userSubject = new BehaviorSubject<User>(JSON.parse(localStorage.getItem('user')));
-    // this.user = this.userSubject.asObservable();
-  }
+  constructor( private http: HttpClient, private router: Router, private storageService: StorageService) {}
 
   login(email: string, password: string){
-    return this.http.post(this.baseUrl+'/login/', {email: email, password: password}).subscribe(res => {
-      //console.log("This is res" + res); // we can send to reporting service from here.
+    return this.http.post(`${this.baseUrl}/login/`, {email: email, password: password}).subscribe(res => {
       this.response = res;
       //console.log("This is response" + JSON.stringify(this.response));
       if(this.response.code == 200){
         this.storageService.saveInfo("userObj", JSON.stringify(this.response));
+        //this.storageService.saveInfo("userObj", this.response);
         this.router.navigate(['/dashboard']);
       }
       else{
         alert("Invalid Credentials");
       }
-
     }, error => {
-      console.log('Couldn\'t Login. Something went wrong!') // Can go to reporting service.
+      console.log('Couldn\'t Login. Something went wrong!');
     })
   }
 
@@ -41,7 +37,7 @@ export class UserService {
   }
 
   register(user: User){
-    return this.http.post(this.baseUrl+'/api/users', user).subscribe(res => {
+    return this.http.post(`${this.baseUrl}/api/users`, user).subscribe(res => {
       //console.log(res);
       this.response = res;
       if(this.response.code == 200){

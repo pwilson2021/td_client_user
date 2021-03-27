@@ -17,8 +17,10 @@ export class TopNavComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.storageService.getInfo("userObj");
-    this.firstName = this.user.firstname;
+    //this.firstName = this.user.firstname;
     console.log("This is a logged in user " + this.user);
+    //this.firstName = JSON.parse(this.user).firstname;
+    //console.log(this.firstName);
 
   }
 
