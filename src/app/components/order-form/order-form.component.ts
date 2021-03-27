@@ -11,29 +11,44 @@ import {Order} from '../../domain/order';
 })
 export class OrderFormComponent implements OnInit {
 
-  products: any = [];
-  constructor(private orderService : OrderService, private router: Router){}
+  //products: any = [];
+  products = ['AAPL', 'MSFT', 'NFLX', 'GOOGL', 'TSLA', 'IBM', 'ORCL', 'AMZN'];
 
-  ngOnInit(){
-    this.products = this.orderService.getProducts();
+  powers = ['Really Smart', 'Super Flexible','Super Hot', 'Weather Changer'];
 
-  }
+  order_type = ['BUY', 'SELL'];
+  portfolio = ['A', 'B', 'C'];
 
-  order: Order = {
+  // newOrder: Order = {
+  //   id: 5,
+  //   price: 1.20,
+  //   quantity: 20,
+  //   product: 'AAPL',
+  //   order_type: 'BUY',
+  //   order_status: 'Pending',
+  // }
+
+  newOrder: Order = {
     id: 0,
     price: 0,
     quantity: 0,
     product: '',
     order_type: '',
-    //order_value: 0,
-    order_status: '',
-  };
+    portfolio: [],
+    order_status: 'Pending',
+  }
 
+  constructor(private orderService : OrderService, private router: Router){}
+
+  ngOnInit(){
+    //this.products = this.orderService.getProducts();
+
+  }
+  
   submit(order: NgForm){
-    console.log(this.order);
-    this.orderService.addOrder(this.order);
-    // //this.user = new User();
-    this.router.navigate(['/orders']);
+    console.log(this.newOrder);
+    this.orderService.addOrder(this.newOrder);
+    // this.router.navigate(['/orders']);
   }
 
   pageTitle= 'Order';

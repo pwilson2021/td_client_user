@@ -1,4 +1,7 @@
+import {Order} from './order';
+
 export interface Portfolio {
     id: number;
-    name: string;
+    orders: Order[];
+    user_id: number;
 }

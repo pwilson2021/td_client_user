@@ -20,21 +20,12 @@ export class LoginComponent implements OnInit {
     password:''
   };
 
-  // submit(login: NgForm){
-  //   this.user.email = login.value.email;
-  //   this.user.password = login.value.password;
-  //   console.log(this.user);  
-  // }
-
   submit(login: NgForm){
-    //console.log(this.user);
     this.userService.login(this.user.email, this.user.password);
     console.log({
       Email: this.user.email, 
-      "password: ": this.user.password
+      password: this.user.password
     });
-    //this.user = new User();
-    this.router.navigate(['/dashboard']);
-  }
+    }
 
 }

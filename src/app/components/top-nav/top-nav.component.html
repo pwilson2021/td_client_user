@@ -1,7 +1,9 @@
 <div class = "topnav">
     <h1 class="pageTitle">HOME</h1>
     <h1 class="pageTitle"></h1> 
+    <p>Welcome, {{firstName}}</p>
     <p class="date">{{today | date}}</p>
     <img src="../../../assets/avatar.png" alt="pic" class="image">
+    <button (click)=logout()>Logout</button>
 </div>
 

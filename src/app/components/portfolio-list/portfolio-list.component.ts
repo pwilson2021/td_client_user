@@ -25,7 +25,7 @@ export class PortfolioListComponent implements OnInit {
       // let portfolios = this.portfolioService.getPortfolios();
       // this.portfolio = portfolios.find(p => p.id == this.id);
     });
-    this.orders = this.orderService.getOrders();
+    // this.orders = this.orderService.getOrders();
   }
 
 }
