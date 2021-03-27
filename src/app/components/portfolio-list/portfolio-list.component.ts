@@ -12,15 +12,19 @@ export class PortfolioListComponent implements OnInit {
 
   constructor(private portfolioService: PortfolioService, private activatedReoute: ActivatedRoute) { }
 
-  portfolio: Portfolio;
+  portfolio: Portfolio={
+    name: "",
+    id: 0,
+    user_id: 0
+  };
   id: any;
   sub: any;
   ngOnInit(): void {
-    this.sub = this.activatedReoute.paramMap.subscribe(params => {
+    this.sub = this.activatedReoute.paramMap.subscribe((params: any) => {
       console.log(params);
-      this.id = params.get('id');
-      let portfolios = this.portfolioService.getPortfolios();
-      this.portfolio = portfolios.find(p => p.id == this.id);
+      // this.id = params.get('id');
+      // let portfolios = this.portfolioService.getPortfolios();
+      // this.portfolio = portfolios.find(p => p.id == this.id);
     });
   }
 

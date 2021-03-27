@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Portfolio } from '../domain/portfolio';
-import { Config } from 'protractor';
+// import { Config } from 'protractor';
 
 @Injectable({
   providedIn: 'root'
@@ -9,13 +9,11 @@ import { Config } from 'protractor';
 export class PortfolioService {
 
   constructor(private http: HttpClient) { }
-
-  configUrl = '../domain/config.json';
   private portfolio: Portfolio[] = [] //See Elvis on this.
 
-  getAllPortfolios(){
-    return this.http.get<Config>(this.configUrl);
-  }
+  // getAllPortfolios(){
+  //   // return this.http.get();
+  // }
 
   getPortfolios(): Portfolio[]{
     return this.portfolio;
