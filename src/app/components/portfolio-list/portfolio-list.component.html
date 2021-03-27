@@ -6,27 +6,31 @@
       <h2 class="text-center pt-5"> Stocks </h2> 
     </div>
     <div class="card-body">
-      <table class="table table-bordered table-striped table-reponsive">
-        <thead>
-          <tr>
-            <th scope="col">Products</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Price</th>
-            <th scope="col">Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- <tr *ngFor="let portfolio of portfolios">
-            <td>{{portfolio.products}}</td>
-            <td>{{portfolio.stocks}}</td>
-            <td>{{portfolio.name}}</td>
-            <td>{{portfolio.stocks}}</td>
-            <td>
-              <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> View stocks </a>
-            </td>
-          </tr> -->
-        </tbody>
-      </table>
+      div.card-
     </div>
   </div>
 </div>
+
+
+
+<table class="table table-striped table-reponsive">
+  <thead>
+    <tr>
+      <th scope="col">Products</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Price</th>
+      <th scope="col">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let portfolio of portfolio">
+      <td>{{portfolio.price}}</td>
+      <td>{{portfolio.quantity}}</td>
+      <td>{{portfolio.product}}</td>
+      <td>{{portfolio.order_type}}</td>
+      <td>
+        <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> View stocks </a>
+      </td>
+    </tr>
+  </tbody>
+</table>

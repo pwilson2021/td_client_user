@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { OrderService } from 'src/app/services/order.service';
+import { ActivatedRoute } from '@angular/router';
+import { Portfolio } from 'src/app/domain/portfolio';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -9,9 +10,18 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class PortfolioListComponent implements OnInit {
 
-  constructor(private orderService: OrderService, private portfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService, private activatedReoute: ActivatedRoute) { }
 
+  portfolio: Portfolio;
+  id: any;
+  sub: any;
   ngOnInit(): void {
+    this.sub = this.activatedReoute.paramMap.subscribe(params => {
+      console.log(params);
+      this.id = params.get('id');
+      let portfolios = this.portfolioService.getPortfolios();
+      this.portfolio = portfolios.find(p => p.id == this.id);
+    });
   }
 
 }

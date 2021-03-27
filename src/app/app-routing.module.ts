@@ -19,7 +19,7 @@ const routes: Routes = [
   {path: 'order-form', component: OrderFormComponent},
   {path: 'portfolio', component: PortfolioComponent},
   {path: 'portfolio-form', component: PortfolioFormComponent},
-  {path: 'portfolio-list', component: PortfolioListComponent},
+  {path: 'portfolio-list/:id', component: PortfolioListComponent}
 
   // {path: 'portfolio', component: PortfolioComponent, children: [
   //   {

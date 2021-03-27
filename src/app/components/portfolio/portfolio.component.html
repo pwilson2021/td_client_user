@@ -22,13 +22,13 @@
           </tr>
         </thead>
         <tbody>
-          <!-- <tr *ngFor="let portfolio of portfolios">
+          <tr *ngFor="let portfolio of portfolios">
+            <td>{{portfolio.id}}</td>
             <td>{{portfolio.name}}</td>
-            <td>{{portfolio.stocks}}</td>
             <td>
-              <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> View stocks </a>
+              <button (click)="viewPortfolio(portfolio.id)">View</button>
             </td>
-          </tr> -->
+          </tr>
         </tbody>
       </table>
     </div>
