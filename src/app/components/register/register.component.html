@@ -15,27 +15,35 @@
                 <form (ngSubmit)="submit(register)" #register="ngForm">
                   <div class="form-group">
                     <label for="firstName">First Name</label>
-                      <input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstname" #firstName="ngModel" class="form-control" required>
-                      <!-- <div *ngIf="firstName.touched" class="alert alert-danger"> First Name required</div> -->
+                      <input type="text" [ngClass]="{ 'alert alert-danger': firstName.invalid && firstName.touched }" id="firstName" name="firstName" [(ngModel)]="user.firstname" #firstName="ngModel" class="form-control" minlength="3" required>
+                      <ng-container  *ngIf="firstName.invalid && firstName.touched">
+                        <small class="alert alert-danger" *ngIf="firstName.errors.required || firstName.errors.minlength"> First Name Invalid! </small>
+                    </ng-container>
                     </div>
   
                     <div class="form-group">
                       <label for="lastName">Last Name</label>
-                      <input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastname" #lastName="ngModel" class="form-control" required>
-                      <!-- <div *ngIf="lastName.touched" class="alert alert-danger"> Last Name required</div> -->
+                      <input type="text" [ngClass]="{ 'alert alert-danger': lastName.invalid && lastName.touched }" id="lastName" name="lastName" [(ngModel)]="user.lastname" #lastName="ngModel" class="form-control" minlength="3" required>
+                      <ng-container  *ngIf="lastName.invalid && lastName.touched">
+                        <small class="alert alert-danger" *ngIf="lastName.errors.required || lastName.errors.minlength"> Last Name Invalid! </small>
+                    </ng-container>
                     </div>
   
                     <div class="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" id="email" name="email" [(ngModel)]="user.email" #email="ngModel" class="form-control" required>
-                        <div *ngIf ="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
-                            <div *ngIf ="email.touched && email.invalid"> Email Invalid </div>
-                        </div>
+                        <input type="email" [ngClass]="{ 'alert alert-danger': email.invalid && email.touched }" id="email" name="email" [(ngModel)]="user.email" pattern=".+@.+\..+" #email="ngModel" class="form-control" required minlength="4" />
+                            <ng-container  *ngIf="email.invalid && email.touched">
+                                <small class="alert alert-danger" *ngIf="email.errors.required"> Email is required!</small>
+                                <small class="alert alert-danger" *ngIf="email.errors.pattern"> Enter a valid email </small>
+                            </ng-container>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
-                        <input type="password" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" required>
-                        <div class="alert alert-danger" *ngIf="password.touched && password.invalid">Password Invalid</div>
+                        <input type="password" [ngClass]="{ 'alert alert-danger': password.invalid && password.touched }" id="password" name="password" [(ngModel)]="user.password" #password="ngModel" class="form-control" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{5,}" required>
+                        <ng-container  *ngIf="password.invalid && password.touched">
+                            <small class="alert alert-danger" *ngIf="password.errors.required"> Password is required!</small>
+                            <small class="alert alert-danger" *ngIf="password.errors.pattern"> Password must contain a number, lower, uppercase and 5 characters</small>
+                        </ng-container>
                     </div>
   
                     <div class="form-group form-check">

@@ -1,8 +1,10 @@
 <div class = "side-nav">
-    <div class="logo">
-        <a routerLink="/dashboard">SIMBA</a>
+    <div class="logo text-center">
+        <div class="mt-5">
+            <a routerLink="/dashboard">Simba</a>
+        </div>
     </div>
-    <div class = "menu">
-        <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> {{item | titlecase}} </a>
+    <div class = "menu pl-4">
+        <a *ngFor="let item of menuItems" mat-list-item [routerLink]="'/'+item"> {{ item | titlecase }} </a>
     </div>
 </div>

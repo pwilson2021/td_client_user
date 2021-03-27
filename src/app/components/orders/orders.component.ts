@@ -15,4 +15,6 @@ export class OrdersComponent implements OnInit {
   // @Input()
   // public orders: Order[];
 
+  pageTitle= 'Orders';
+
 }

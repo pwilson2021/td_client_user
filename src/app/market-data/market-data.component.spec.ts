@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PortfolioFormComponent } from './portfolio-form.component';
+import { MarketDataComponent } from './market-data.component';
 
-describe('PortfolioFormComponent', () => {
-  let component: PortfolioFormComponent;
-  let fixture: ComponentFixture<PortfolioFormComponent>;
+describe('MarketDataComponent', () => {
+  let component: MarketDataComponent;
+  let fixture: ComponentFixture<MarketDataComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PortfolioFormComponent ]
+      declarations: [ MarketDataComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PortfolioFormComponent);
+    fixture = TestBed.createComponent(MarketDataComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

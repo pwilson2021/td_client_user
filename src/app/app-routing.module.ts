@@ -8,6 +8,7 @@ import { OrdersComponent } from './components/orders/orders.component';
 import { OrderFormComponent } from './components/order-form/order-form.component';
 import { PortfolioFormComponent } from './components/portfolio-form/portfolio-form.component';
 import { RegisterComponent } from './components/register/register.component';
+import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'login'},
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'order-form', component: OrderFormComponent},
   {path: 'portfolio', component: PortfolioComponent},
   {path: 'portfolio-form', component: PortfolioFormComponent},
+  {path: 'portfolio-list/:id', component: PortfolioListComponent}
 
   // {path: 'portfolio', component: PortfolioComponent, children: [
   //   {

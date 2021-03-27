@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import {UserService} from '../../services/user.service';
-import {User} from '../../domain/user';
 
 
 @Component({
@@ -21,18 +20,12 @@ export class LoginComponent implements OnInit {
     password:''
   };
 
-  // submit(login: NgForm){
-  //   this.user.email = login.value.email;
-  //   this.user.password = login.value.password;
-  //   console.log(this.user);  
-  // }
-
   submit(login: NgForm){
-    //console.log(this.user);
     this.userService.login(this.user.email, this.user.password);
-    console.log(this.user.email, this.user.password);
-    //this.user = new User();
-    this.router.navigate(['/dashboard']);
-  }
+    console.log({
+      Email: this.user.email, 
+      password: this.user.password
+    });
+    }
 
 }
