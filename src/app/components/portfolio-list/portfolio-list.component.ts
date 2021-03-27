@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Portfolio } from 'src/app/domain/portfolio';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { Order } from '../../domain/order';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-portfolio-list',
@@ -10,13 +12,10 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class PortfolioListComponent implements OnInit {
 
-  constructor(private portfolioService: PortfolioService, private activatedReoute: ActivatedRoute) { }
+  constructor(private portfolioService: PortfolioService, private activatedReoute: ActivatedRoute, private orderService: OrderService) { }
 
-  portfolio: Portfolio={
-    name: "",
-    id: 0,
-    user_id: 0
-  };
+  portfolios: Portfolio[] = [];
+  orders: Order[] = [];
   id: any;
   sub: any;
   ngOnInit(): void {
@@ -26,6 +25,7 @@ export class PortfolioListComponent implements OnInit {
       // let portfolios = this.portfolioService.getPortfolios();
       // this.portfolio = portfolios.find(p => p.id == this.id);
     });
+    this.orders = this.orderService.getOrders();
   }
 
 }

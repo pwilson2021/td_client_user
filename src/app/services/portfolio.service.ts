@@ -9,18 +9,22 @@ import { Portfolio } from '../domain/portfolio';
 export class PortfolioService {
 
   constructor(private http: HttpClient) { }
-  private portfolio: Portfolio[] = [] //See Elvis on this.
+  private portfolios: Portfolio[] = [
+    { id: 1, name: "Port A" },
+    { id: 2, name: "Port B" },
+    { id: 3, name: "Port B" }
+  ] //See Elvis on this.
 
   // getAllPortfolios(){
   //   // return this.http.get();
   // }
 
   getPortfolios(): Portfolio[]{
-    return this.portfolio;
+    return this.portfolios;
   }
 
   addPortfolio(portfolio: Portfolio){
-    this.portfolio.push(portfolio);
+    this.portfolios.push(portfolio);
   }
 
   getPortfolio(id: number){

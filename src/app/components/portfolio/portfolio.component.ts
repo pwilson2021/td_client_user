@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Config } from 'protractor';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 import { Portfolio } from '../../domain/portfolio';
 
@@ -14,8 +13,7 @@ export class PortfolioComponent implements OnInit {
   constructor(private portfolioService: PortfolioService, private router: Router) { }
 
   portfolios: Portfolio[] = [];
-  config: Config;
-
+  
   ngOnInit(): void {
     this.portfolios = this.portfolioService.getPortfolios();
   }
@@ -23,7 +21,8 @@ export class PortfolioComponent implements OnInit {
   pageTitle= 'Portfolio';
 
   viewPortfolio(portfolio: number){
-    this.router.navigate(['/Portfolio-list', portfolio]);
+    this.router.navigate(['/portfolio-list', portfolio]);
+    console.log(portfolio);
   }
 
 }

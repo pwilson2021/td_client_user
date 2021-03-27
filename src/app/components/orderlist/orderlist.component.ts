@@ -16,7 +16,7 @@ export class OrderlistComponent implements OnInit {
     this.orders = this.orderService.getOrders();
   }
 
-  orders: any = [];
+  orders: Order[] = [];
   //orders: Order[];
 
   pageTitle= 'Orders';

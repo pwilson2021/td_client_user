@@ -1,32 +1,30 @@
 <app-top-nav></app-top-nav>
 <app-navigation></app-navigation>
 <div>
-  <div class="pull-right">
-    <a routerLink="/portfolio-form">
-      <bi name="plus-circle-fill"></bi>
-      <p>Create Portfolio</p>
-    </a>
-    <a routerLink="/portfolio-list">
-      <bi name="cogs"></bi>
-      <p>Portfolio</p>
-    </a>
+  <div class="row">
+    <div class="create-div">
+      <a routerLink="/portfolio-form">
+        <bi name="plus-circle-fill"></bi>
+        <p>Create Portfolio</p>
+      </a>
+    </div>
   </div>
-  <div class="div">
+  <div class="row">
     <div class="order-list">
       <table class="table">
         <thead>
           <tr>
+            <th scope="col">No. </th>
             <th scope="col">Name</th>
-            <th scope="col">No. Stocks</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let portfolio of portfolios">
-            <td>{{portfolio.id}}</td>
+          <tr *ngFor="let portfolio of portfolios, index as i">
+            <td>{{ i }}</td>
             <td>{{portfolio.name}}</td>
             <td>
-              <button (click)="viewPortfolio(portfolio.id)">View</button>
+              <button (click)="viewPortfolio(portfolio.id)" class="btn btn-primary">View</button>
             </td>
           </tr>
         </tbody>

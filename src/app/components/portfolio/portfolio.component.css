@@ -1,7 +1,27 @@
 .div{
-  position: fixed;
-  top: 100px;
+  position: absolute;
+  top: 20%;
   left: 30%;
   text-align: center;
   width: 50%;
+}
+
+.create-div {
+  position: absolute;
+  top: 80px;
+  right: 10%;
+  width: auto;
+}
+
+.order-list {
+  position: absolute;
+  top: 100px;
+  left: 30rem;
+  right: 30rem;
+  text-align: center;
+  width: 100em;
+}
+
+#portfolios {
+
 }
