@@ -21,6 +21,7 @@ export class PortfolioService {
 
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;
+  
   getUserPortfolios(){
     return this.http.get(`${this.baseUrl}/api/portfolios/get_user_portfolios/${this.user_id}`).subscribe(res => {
       this.response = res;
