@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Order } from '../../domain/order';
 import { OrderService } from '../../services/order.service';
 
 
@@ -11,13 +10,12 @@ import { OrderService } from '../../services/order.service';
 export class OrderlistComponent implements OnInit {
 
   constructor(private orderService: OrderService) { }
+  
+  orders: any = [];
 
   ngOnInit() {
-    //this.orders = this.orderService.getOrders();
+    this.orders = this.orderService.getOrders().subscribe(res => {this.orders = res;});
   }
-
-  orders: Order[] = [];
-  //orders: Order[];
 
   pageTitle= 'Orders';
 }
