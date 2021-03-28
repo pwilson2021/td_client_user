@@ -13,7 +13,9 @@
 .side-nav {
     width: 200px;
     height: 100%;
-    left: 0px;
+    /* left: 0px; */
+    float: left;
+    top: 0px;
     background-color: #5692b7;
 }
 

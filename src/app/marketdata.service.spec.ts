@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
-import { MarketdataService } from './marketdata.service';
+import { MarketdataService } from './services/marketdata.service';
 
 describe('MarketdataService', () => {
   let service: MarketdataService;
