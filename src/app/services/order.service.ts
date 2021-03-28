@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import {Order} from '../domain/order';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { StorageService } from './storage.service';
 
 
 @Injectable({
@@ -12,7 +14,7 @@ export class OrderService {
   response: any;
 
   // private products = [];
-  constructor( private http: HttpClient, private router: Router) { }
+  constructor( private http: HttpClient, private router: Router, private storageService: StorageService) { }
 
   private orders: Order[] = [
     {id: 1, order_type: "Buy", 
@@ -47,10 +49,11 @@ export class OrderService {
 
   // }
 
-  public getOrders(){
-    return this.http.get(`${this.baseUrl}/api/orders`).subscribe(res =>{
-      
-    })
+  user = this.storageService.getInfo("userObj");
+  user_id = JSON.parse(this.user).id;
+
+  public getOrders(): Observable<Order>{
+    return this.http.get<Order>(`${this.baseUrl}/api/orders/get_user_orders/${this.user_id}`);
   }
 
   addOrder(order:Order){
