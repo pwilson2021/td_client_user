@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   firstName: any;
 
   ngOnInit(): void {
-    this.user = this.storageService.getInfo("userObj");
+    this.user = this.storageService.loggedIn();
     //console.log("This is a logged in user" + this.user);
     this.firstName = this.user.firstname;
   }

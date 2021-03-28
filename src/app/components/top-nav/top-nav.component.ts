@@ -18,19 +18,16 @@ export class TopNavComponent implements OnInit {
   pageTitle: string = '';
 
   ngOnInit(): void {
-    this.user = this.storageService.getInfo("userObj");
-    //this.firstName = this.user.firstname;
-    console.log("This is a logged in user " + this.user);
+    let user = this.storageService.getInfo("userObj");
+    this.firstName = JSON.parse(user).firstname;
     
     if (this.router.url.includes('dashboard')) this.pageTitle= 'Home'
       else if (this.router.url.includes('portfolio')) this.pageTitle= 'Portfolio'
       else if (this.router.url.includes('order')) this.pageTitle= 'Orders'
-   //this.firstName = JSON.parse(this.user).firstname;
-    //console.log(this.firstName);
-
   }
 
   today: number = Date.now();
+  
   logout(){
     this.userService.logout();
   }

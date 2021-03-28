@@ -16,7 +16,10 @@ export class PortfolioComponent implements OnInit {
   
   ngOnInit(): void {
     this.portfolios = this.portfolioService.getPortfolios();
-  }
+
+    // Use this when getting from the api
+    //this.portfolios = this.portfolioService.getUserPortfolios();
+   }
 
   pageTitle= 'Portfolio';
 

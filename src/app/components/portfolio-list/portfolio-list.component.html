@@ -1,22 +1,18 @@
 <app-top-nav></app-top-nav>
 <app-navigation></app-navigation>
 <div class="container col-6 mx-2 div">
-  <div class="card" style="border-radius: 10px; border: 2px solid black;">
-    <div class="card-title">
-      <h2 class="text-center pt-5"> Stocks </h2> 
-    </div>
-    <div class="card-body">
-        <tbody>
-          <tr *ngFor="let order of orders">
-            <td>{{order.price}}</td>
-            <td>{{order.quantity}}</td>
-            <td>{{order.product}}</td>
-            <td>{{order.order_type}}</td>
-          </tr>
-        </tbody>
-    </div>
+  <div class="card card-body" style="border-radius: 10px; background: #fff;">
+    <h1> {{getPortfolioName()}}</h1>
+    <ul class="list-unstyled">
+      <li class="card card-body mb-2" *ngFor="let order of orders">
+        <ul class="list-group">
+
+          <li class="list-group-item item">{{order.price}}</li>
+          <li class="list-group-item item">{{order.quantity}}</li>
+          <li class="list-group-item item">{{order.product}}</li>
+          <li class="list-group-item item">{{order.order_type}}</li>
+        </ul>
+      </li>
+    </ul>
   </div>
 </div>
-
-
-

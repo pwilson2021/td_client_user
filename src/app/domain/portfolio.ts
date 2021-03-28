@@ -1,7 +1,6 @@
 import {Order} from './order';
 
 export interface Portfolio {
-    id: number;
-    orders: Order[];
+    name: string;
     user_id: number;
 }

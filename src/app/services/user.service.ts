@@ -18,22 +18,24 @@ export class UserService {
   login(email: string, password: string){
     return this.http.post(`${this.baseUrl}/login/`, {email: email, password: password}).subscribe(res => {
       this.response = res;
-      //console.log("This is response" + JSON.stringify(this.response));
+      console.log("This is response" + JSON.stringify(this.response));
       if(this.response.code == 200){
         this.storageService.saveInfo("userObj", JSON.stringify(this.response));
         //this.storageService.saveInfo("userObj", this.response);
         this.router.navigate(['/dashboard']);
       }
       else{
+        console.log("Invalid Credentials");
         alert("Invalid Credentials");
       }
     }, error => {
       console.log('Couldn\'t Login. Something went wrong!');
-    })
+    });
   }
 
   logout(){
     this.storageService.clearInfo("userObj");
+    this.storageService.clearPortfolioInfo("portfolioObj");
     this.router.navigate(['/login']);
   }
 
@@ -47,11 +49,12 @@ export class UserService {
       }
       else{
         console.log("Signup failed");
+        alert("Signup failed");
       }
 
     }, error => {
       console.log('Couldn\'t Register. Something went wrong!') // Can go to reporting service.
-    })
+    });
   }
 
 }

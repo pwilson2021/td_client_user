@@ -5,3 +5,19 @@
   text-align: center;
   width: 100%;
 }
+
+div.card {
+  width: 50em;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+
+.list-group-item .item{
+  padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+}

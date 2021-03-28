@@ -48,7 +48,7 @@ export class OrderFormComponent implements OnInit {
   submit(order: NgForm){
     console.log(this.newOrder);
     this.orderService.addOrder(this.newOrder);
-    // this.router.navigate(['/orders']);
+    this.router.navigate(['/orders']);
   }
 
   pageTitle= 'Order';
