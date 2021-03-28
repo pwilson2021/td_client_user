@@ -10,9 +10,9 @@ export class PortfolioService {
 
   constructor(private http: HttpClient) { }
   private portfolios: Portfolio[] = [
-    // { id: 1, name: "Port A" },
-    // { id: 2, name: "Port B" },
-    // { id: 3, name: "Port B" }
+    { id: 1, name: "Port A" },
+    { id: 2, name: "Port B" },
+    { id: 3, name: "Port c" }
   ] //See Elvis on this.
 
   // getAllPortfolios(){

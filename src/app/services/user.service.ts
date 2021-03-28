@@ -25,6 +25,7 @@ export class UserService {
         this.router.navigate(['/dashboard']);
       }
       else{
+        console.log("Invalid Credentials");
         alert("Invalid Credentials");
       }
     }, error => {
@@ -47,6 +48,7 @@ export class UserService {
       }
       else{
         console.log("Signup failed");
+        alert("Signup failed");
       }
 
     }, error => {
