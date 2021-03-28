@@ -19,12 +19,13 @@ export class TopNavComponent implements OnInit {
     this.user = this.storageService.getInfo("userObj");
     //this.firstName = this.user.firstname;
     console.log("This is a logged in user " + this.user);
-    //this.firstName = JSON.parse(this.user).firstname;
+    this.firstName = JSON.parse(this.user).firstname;
     //console.log(this.firstName);
 
   }
 
   today: number = Date.now();
+  
   logout(){
     this.userService.logout();
   }

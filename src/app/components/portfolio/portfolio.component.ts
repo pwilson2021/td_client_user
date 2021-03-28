@@ -14,9 +14,7 @@ export class PortfolioComponent implements OnInit {
 
   portfolios: Portfolio[] = [];
   
-  ngOnInit(): void {
-    this.portfolios = this.portfolioService.getPortfolios();
-  }
+  ngOnInit(): void { }
 
   pageTitle= 'Portfolio';
 

@@ -14,18 +14,24 @@ export class PortfolioListComponent implements OnInit {
 
   constructor(private portfolioService: PortfolioService, private activatedReoute: ActivatedRoute, private orderService: OrderService) { }
 
-  portfolios: Portfolio[] = [];
+  portfolios: Portfolio = {
+    name: ""
+  };
   orders: Order[] = [];
   id: any;
   sub: any;
   ngOnInit(): void {
     this.sub = this.activatedReoute.paramMap.subscribe((params: any) => {
       console.log(params);
-      // this.id = params.get('id');
-      // let portfolios = this.portfolioService.getPortfolios();
-      // this.portfolio = portfolios.find(p => p.id == this.id);
+      this.id = params.get('id');
+      let portfolio = this.portfolioService.getUserPortfolios();
+      // this.portfolios = portfolio.(p => p.id == this.id);
     });
     // this.orders = this.orderService.getOrders();
+  }
+
+  getPortfolioName(){
+    return this.portfolios.name;
   }
 
 }
