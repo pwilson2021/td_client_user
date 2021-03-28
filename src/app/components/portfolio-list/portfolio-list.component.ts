@@ -15,7 +15,7 @@ export class PortfolioListComponent implements OnInit {
   constructor(private portfolioService: PortfolioService, private activatedReoute: ActivatedRoute, private orderService: OrderService) { }
 
   portfolios: Portfolio = {
-    name: ""
+    name: "", user_id: 0
   };
   orders: Order[] = [];
   id: any;

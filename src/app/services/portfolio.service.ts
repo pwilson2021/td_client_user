@@ -14,27 +14,31 @@ export class PortfolioService {
 
   constructor(private http: HttpClient, private route: Router, private storageService: StorageService) { }
   private portfolios: Portfolio[] = [
-    { name: "Port A" },
-    { name: "Port B" },
-    { name: "Port c" }
+    { name: "Port A", user_id: 1 },
+    { name: "Port B", user_id: 2 },
+    { name: "Port c", user_id: 3 }
   ] //See Elvis on this.
+
+  getPortfolios(){
+    return this.portfolios;
+  }
 
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;
   
   getUserPortfolios(){
     return this.http.get(`${this.baseUrl}/api/portfolios/get_user_portfolios/${this.user_id}`).subscribe(res => {
-      this.response = res;
-      if (true){
-        console.log(res);
-        // return res;
+      if (res) {
+        this.response = res;
+        console.log(JSON.stringify(this.response));
+        this.storageService.savePortfolioInfo("portfolioObj", JSON.stringify(this.response));
       }
     }, error => {
       console.log("Couldn\'t Fetch Portfolios");
     });
   }
 
-  addPortfolio(portfolio: Portfolio){
+  addPortfolio(portfolio: Portfolio, ){
     return this.http.post(`${this.baseUrl}/api/portfolios`, portfolio).subscribe(res => {
       this.response = res;
       console.log(res);

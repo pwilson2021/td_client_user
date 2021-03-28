@@ -3,7 +3,7 @@
   top: 20%;
   left: 30%;
   text-align: center;
-  width: 50%;
+  width: 20%;
 }
 
 .create-div {
@@ -17,9 +17,9 @@
   position: absolute;
   top: 100px;
   left: 30rem;
-  right: 30rem;
+  /* right: 30rem; */
   text-align: center;
-  width: 100em;
+  /* width: 100em; */
 }
 
 #portfolios {
