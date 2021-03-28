@@ -1,0 +1,5 @@
+<div class="market-data">
+    <div class="card data-card" *ngFor="let data of marketdata">
+        {{data.TICKER}} <span>${{data.LAST_TRADED_PRICE}}</span>
+    </div>
+</div>

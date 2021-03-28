@@ -22,5 +22,17 @@ export class StorageService {
   loggedIn(){
     return localStorage.getItem("userObj");
   }
+
+  savePortfolioInfo(key:string, info:string) {
+    localStorage.setItem(key, info);
+  }
+
+  getPortfolioInfo(key: string) {
+    return localStorage.getItem(key);
+  }
+
+  clearPortfolioInfo(key:string) {
+    localStorage.removeItem(key);
+  }
   
 }

@@ -22,7 +22,7 @@ export class UserService {
       if(this.response.code == 200){
         this.storageService.saveInfo("userObj", JSON.stringify(this.response));
         //this.storageService.saveInfo("userObj", this.response);
-        // this.router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']);
       }
       else{
         console.log("Invalid Credentials");
@@ -35,6 +35,7 @@ export class UserService {
 
   logout(){
     this.storageService.clearInfo("userObj");
+    this.storageService.clearPortfolioInfo("portfolioObj");
     this.router.navigate(['/login']);
   }
 
