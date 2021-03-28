@@ -11,7 +11,7 @@
           <div class="form-group px-5">
             <!-- <input type="text" id="portfolio" name="portfolio" class="form-control" required>
              -->
-            <input type="text" ngModel name="portfolio" #portfolio="ngModel" (ngModel)="portfolio" class="form-control" placeholder="Portfolio Name" required>
+            <input type="text" ngModel name="name" #portfolio="ngModel" [(ngModel)]="new_portfolio.name" class="form-control" placeholder="Portfolio Name" required>
             <div *ngIf ="portfolio.invalid && (portfolio.dirty || portfolio.touched)" class="alert alert-danger">
               <div *ngIf ="portfolio.touched && portfolio.invalid"> Can't be empty </div>
           </div>

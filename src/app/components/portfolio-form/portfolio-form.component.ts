@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Portfolio } from 'src/app/domain/portfolio';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
@@ -10,17 +11,18 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class PortfolioFormComponent implements OnInit {
   pageTitle= 'Portfolio Form';
+  
+  new_portfolio: Portfolio = { name: '' };
 
-  constructor(private portfolioService: PortfolioService) { }
+  constructor(private portfolioService: PortfolioService, private route: Router) { }
 
   ngOnInit(): void {
   }
 
-  // public portfolio: Portfolio = new Portfolio();
-
   submit(portfolio: NgForm){
-    // this.portfolio.add
-    console.log("Created a new Portfolio");
+    console.log(this.new_portfolio);
+    this.portfolioService.addPortfolio(this.new_portfolio);
+    this.route.navigate(['/portfolio']);
   }
 
 }
