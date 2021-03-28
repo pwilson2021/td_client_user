@@ -18,8 +18,11 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    position: absolute;
+    width: 80%;
+    left: 15%;
+    /* padding-left: 2rem;
+    padding-right: 2rem; */
   }
 
 .pageTitle {
