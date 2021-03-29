@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Portfolio } from 'src/app/domain/portfolio';
 import { PortfolioService } from 'src/app/services/portfolio.service';
 
 @Component({
@@ -11,23 +12,17 @@ export class PortfolioComponent implements OnInit {
 
   constructor(private portfolioService: PortfolioService, private router: Router) { }
 
-  portfolios: any = [];
+  portfolios: Portfolio[] = [];
   
   ngOnInit(): void {
     // this.portfolios = this.portfolioService.getPortfolios();
 
-    // Use this when getting from the api
-    this.portfolios = this.portfolioService.getUserPortfolios().subscribe(
-      (res) => {this.portfolios = res;
-        }    
-  );
+    // Getting data from api
+    this.portfolioService.getUserPortfolios().subscribe(res => this.portfolios = res);
    }
-
-  pageTitle= 'Portfolio';
 
   viewPortfolio(portfolio: number){
     this.router.navigate(['/portfolio-list', portfolio]);
     console.log(portfolio);
   }
-
 }

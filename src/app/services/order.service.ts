@@ -46,14 +46,13 @@ export class OrderService {
   // addOrder(order:Order){
   //   this.orders.push(order);
   //   this.router.navigate(['/orders']);
-
   // }
 
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;
 
-  public getOrders(): Observable<Order>{
-    return this.http.get<Order>(`${this.baseUrl}/api/orders/get_user_orders/${this.user_id}`);
+  public getOrders(): Observable<Order[]>{
+    return this.http.get<Order[]>(`${this.baseUrl}/api/orders/get_user_orders/${this.user_id}`);
   }
 
   addOrder(order:Order){
@@ -61,7 +60,9 @@ export class OrderService {
       this.response = res;
       if(this.response.code == 200){
         alert("Order placed");
-        this.router.navigate(['/orders']);
+        console.log(res);
+        
+        // this.router.navigate(['/orders']);
       }
       else{
         console.log("Order creation failed");
@@ -71,5 +72,4 @@ export class OrderService {
       console.log('Couldn\'t place order. Something went wrong!')
     })
   }
-
 }
