@@ -29,8 +29,8 @@ export class MarketdataService {
 
   // }
 
-  getMarketData() : Observable<MarketData>{
-    return this.http.get<MarketData>(this.baseUrl)
+  getMarketData() : Observable<MarketData[]>{
+    return this.http.get<MarketData[]>(this.baseUrl)
     };
 
 
