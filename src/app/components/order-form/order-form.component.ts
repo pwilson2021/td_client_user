@@ -5,6 +5,7 @@ import {OrderService} from '../../services/order.service';
 import {PortfolioService} from '../../services/portfolio.service';
 import {Order} from '../../domain/order';
 import { StorageService } from 'src/app/services/storage.service';
+import { Product } from 'src/app/domain/product';
 
 @Component({
   selector: 'app-order-form',
@@ -13,16 +14,17 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class OrderFormComponent implements OnInit {
 
-  //products = ['AAPL', 'MSFT', 'NFLX', 'GOOGL', 'TSLA', 'IBM', 'ORCL', 'AMZN'];
-
-  powers = ['Really Smart', 'Super Flexible','Super Hot', 'Weather Changer'];
-
   order_type = ['BUY', 'SELL'];
-  products: any[];
+  products:Product[];
   portfolio : any[];
 
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;
+
+  // ngDoCheck(){
+  //   this.newOrder.product_id = +this.newOrder.product_id;
+  // }
+
   newOrder: Order = {
     //id: 0,
     price: 0,
@@ -37,16 +39,14 @@ export class OrderFormComponent implements OnInit {
   constructor(private orderService : OrderService, private portfolioService : PortfolioService, private router: Router, private storageService: StorageService){}
 
   ngOnInit(){
-    //console.log(this.portfolioName);
     this.orderService.getProducts().subscribe(res=>this.products = res);
     this.portfolioService.getUserPortfolios().subscribe(res=>this.portfolio = res);
-
   }
   
   submit(order: NgForm){
     console.log(this.newOrder);
     this.orderService.addOrder(this.newOrder);
-    this.router.navigate(['/orders']);
+    //this.router.navigate(['/orders']);
   }
 
   pageTitle= 'Order';
