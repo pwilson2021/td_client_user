@@ -20,6 +20,7 @@ export class PortfolioFormComponent implements OnInit {
   new_portfolio: Portfolio = { name: '', user_id: this.user_id };
 
   ngOnInit(): void {
+
   }
 
   submit(portfolio: NgForm){
