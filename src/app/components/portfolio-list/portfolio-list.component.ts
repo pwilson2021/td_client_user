@@ -23,7 +23,7 @@ export class PortfolioListComponent implements OnInit {
       console.log(params);
       this.id = params.get('id');
       let portfolio = this.portfolioService.getUserPortfolios();
-      this.portfolios = portfolio.(p => p.id == this.id);
+      //this.portfolios = portfolio.(p => p.id == this.id);
     });
   }
 }

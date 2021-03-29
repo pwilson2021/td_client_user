@@ -13,33 +13,24 @@ import { StorageService } from 'src/app/services/storage.service';
 })
 export class OrderFormComponent implements OnInit {
 
-  //products: any = [];
-  products = ['AAPL', 'MSFT', 'NFLX', 'GOOGL', 'TSLA', 'IBM', 'ORCL', 'AMZN'];
+  //products = ['AAPL', 'MSFT', 'NFLX', 'GOOGL', 'TSLA', 'IBM', 'ORCL', 'AMZN'];
 
   powers = ['Really Smart', 'Super Flexible','Super Hot', 'Weather Changer'];
 
   order_type = ['BUY', 'SELL'];
+  products: any[];
   portfolio : any[];
-
-  // newOrder: Order = {
-  //   id: 5,
-  //   price: 1.20,
-  //   quantity: 20,
-  //   product: 'AAPL',
-  //   order_type: 'BUY',
-  //   order_status: 'Pending',
-  // }
 
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;
   newOrder: Order = {
-    id: 0,
+    //id: 0,
     price: 0,
     quantity: 0,
-    product: '',
+    product_id: 0,
     order_type: '',
-    portfolio: [],
-    //order_status: 'Pending',
+    portfolio_id: 0,
+    order_status: 'Pending',
     user_id: this.user_id
   }
 
@@ -47,6 +38,7 @@ export class OrderFormComponent implements OnInit {
 
   ngOnInit(){
     //console.log(this.portfolioName);
+    this.orderService.getProducts().subscribe(res=>this.products = res);
     this.portfolioService.getUserPortfolios().subscribe(res=>this.portfolio = res);
 
   }

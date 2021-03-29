@@ -13,8 +13,8 @@
               <div class="form-group">
                 <label for="product">Select Product</label>
                   <select class="form-control" id="product"
-                  [(ngModel)] = "newOrder.product" name="product">
-                      <option *ngFor="let product of products" [value]="product">{{product}}</option>
+                  [(ngModel)] = "newOrder.product_id" name="product">
+                      <option *ngFor="let product of products" [value]="product">{{product.ticker}}</option>
                   </select>
               </div>
               <div class="row">
@@ -42,7 +42,7 @@
                     <label for="product">Portfolio</label>
                     <select class="form-control" name="portfolio" id="portfolio" 
                     required
-                    [(ngModel)] ="newOrder.portfolio">
+                    [(ngModel)] ="newOrder.portfolio_id">
                         <option *ngFor="let port of portfolio" [value]="port">{{port.name}}</option>
                     </select>
                    </div>
