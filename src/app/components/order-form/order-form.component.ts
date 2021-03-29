@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import {OrderService} from '../../services/order.service';
+import {PortfolioService} from '../../services/portfolio.service';
 import {Order} from '../../domain/order';
 import { StorageService } from 'src/app/services/storage.service';
 
@@ -18,7 +19,7 @@ export class OrderFormComponent implements OnInit {
   powers = ['Really Smart', 'Super Flexible','Super Hot', 'Weather Changer'];
 
   order_type = ['BUY', 'SELL'];
-  portfolio = ['A', 'B', 'C'];
+  portfolio : any[];
 
   // newOrder: Order = {
   //   id: 5,
@@ -38,14 +39,15 @@ export class OrderFormComponent implements OnInit {
     product: '',
     order_type: '',
     portfolio: [],
-    order_status: 'Pending',
+    //order_status: 'Pending',
     user_id: this.user_id
   }
 
-  constructor(private orderService : OrderService, private router: Router, private storageService: StorageService){}
+  constructor(private orderService : OrderService, private portfolioService : PortfolioService, private router: Router, private storageService: StorageService){}
 
   ngOnInit(){
-    //this.products = this.orderService.getProducts();
+    //console.log(this.portfolioName);
+    this.portfolioService.getUserPortfolios().subscribe(res=>this.portfolio = res);
 
   }
   
