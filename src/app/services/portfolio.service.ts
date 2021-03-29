@@ -40,11 +40,11 @@ export class PortfolioService {
   //   });
   // }
 
-  getUserPortfolios(): Observable<Portfolio>{
-    return this.http.get<Portfolio>(`${this.baseUrl}/api/portfolios/get_user_portfolios/${this.user_id}`);
+  getUserPortfolios(): Observable<Portfolio[]>{
+    return this.http.get<Portfolio[]>(`${this.baseUrl}/api/portfolios/get_user_portfolios/${this.user_id}`);
   }
 
-  addPortfolio(portfolio: Portfolio, ){
+  addPortfolio(portfolio: Portfolio){
     return this.http.post(`${this.baseUrl}/api/portfolios`, portfolio).subscribe(res => {
       this.response = res;
       console.log(res);

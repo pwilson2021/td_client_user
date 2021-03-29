@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Order } from 'src/app/domain/order';
 import { OrderService } from '../../services/order.service';
 
 
@@ -11,11 +12,12 @@ export class OrderlistComponent implements OnInit {
 
   constructor(private orderService: OrderService) { }
   
-  orders: any = [];
+  orders: Order[] = [];
 
   ngOnInit() {
-    this.orders = this.orderService.getOrders().subscribe(res => {this.orders = res;});
-  }
+    // this.orders = this.orderService.getOrders();
 
-  pageTitle= 'Orders';
+    // Getting data from api
+    this.orderService.getOrders().subscribe(res => this.orders = res);
+  }
 }
