@@ -35,7 +35,7 @@ export class UserService {
 
   logout(){
     this.storageService.clearInfo("userObj");
-    this.storageService.clearPortfolioInfo("portfolioObj");
+    this.storageService.clearPortfolioInfo("portfolioObj")
     this.router.navigate(['/login']);
   }
 
