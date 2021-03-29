@@ -26,7 +26,7 @@ export class PortfolioFormComponent implements OnInit {
   submit(portfolio: NgForm){
     this.portfolioService.addPortfolio(this.new_portfolio);
     console.log(this.new_portfolio);
-    // this.route.navigate(['/portfolio']);
+    this.route.navigate(['/portfolio']);
   }
 
 }
