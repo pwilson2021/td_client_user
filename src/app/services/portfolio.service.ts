@@ -49,6 +49,7 @@ export class PortfolioService {
       this.response = res;
       console.log(res);
       if (this.response.code == 200){
+        this.storageService.savePortfolioInfo("portfolioObj", JSON.stringify(this.response));
         this.route.navigate(['/portfolio']);
       }else {
         console.log("Couldn\'t Add Portfolio");
