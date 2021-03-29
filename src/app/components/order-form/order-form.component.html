@@ -43,7 +43,7 @@
                     <select class="form-control" name="portfolio" id="portfolio" 
                     required
                     [(ngModel)] ="newOrder.portfolio">
-                        <option *ngFor="let port of portfolio" [value]="port">{{port}}</option>
+                        <option *ngFor="let port of portfolio" [value]="port">{{port.name}}</option>
                     </select>
                    </div>
                 </div>

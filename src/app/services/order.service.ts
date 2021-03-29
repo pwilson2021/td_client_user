@@ -13,7 +13,6 @@ export class OrderService {
   baseUrl = 'https://simba-client-connectivity.herokuapp.com'
   response: any;
 
-  // private products = [];
   constructor( private http: HttpClient, private router: Router, private storageService: StorageService) { }
 
   private orders: Order[] = [
@@ -34,19 +33,6 @@ export class OrderService {
       portfolio: ['A'],
       order_status: "Validated" }
   ];
-
-  // public getProducts(){
-  //   return this.products;
-  // }
-
-  // public getOrders(): Order[]{
-  //   return this.orders;
-  // }
-
-  // addOrder(order:Order){
-  //   this.orders.push(order);
-  //   this.router.navigate(['/orders']);
-  // }
 
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;
