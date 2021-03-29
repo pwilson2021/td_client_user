@@ -23,6 +23,6 @@ export class PortfolioComponent implements OnInit {
 
   viewPortfolio(portfolio: number){
     this.router.navigate(['/portfolio-list', portfolio]);
-    console.log(portfolio);
+    // console.log(portfolio);
   }
 }

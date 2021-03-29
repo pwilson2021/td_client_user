@@ -19,11 +19,11 @@ export class PortfolioListComponent implements OnInit {
 
   ngOnInit(): void {
     this.portfolioService.getUserPortfolios().subscribe(res => this.portfolios = res);
-    this.sub = this.activatedRoute.paramMap.subscribe((params: any) => {
-      console.log(params);
-      this.id = params.get('id');
+    this.sub = this.activatedRoute.paramMap.subscribe(params => {
+      console.log(typeof +params.get('id'));
+      this.id = +params.get('id');
       let portfolio = this.portfolioService.getUserPortfolios();
-      this.portfolios = portfolio.(p => p.id == this.id);
+      // this.portfolios = portfolio.find(p => p.id == this.id);
     });
   }
 }

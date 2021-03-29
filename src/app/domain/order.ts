@@ -9,5 +9,5 @@ export interface Order {
     //order_value?: number;
     order_status?: string;
     portfolio?: any[];
-    user_id?: number;
+    user_id?: number
 }
