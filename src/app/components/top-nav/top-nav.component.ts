@@ -18,7 +18,7 @@ export class TopNavComponent implements OnInit {
   pageTitle: string = '';
 
   ngOnInit(): void {
-    console.log(this.firstName);
+    // console.log(this.firstName);
     if (this.router.url.includes('dashboard')) this.pageTitle= 'Home'
       else if (this.router.url.includes('portfolio')) this.pageTitle= 'Portfolio'
       else if (this.router.url.includes('order')) this.pageTitle= 'Orders'
