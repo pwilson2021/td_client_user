@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import {OrderService} from '../../services/order.service';
 import {Order} from '../../domain/order';
+import { StorageService } from 'src/app/services/storage.service';
 
 @Component({
   selector: 'app-order-form',
@@ -28,6 +29,8 @@ export class OrderFormComponent implements OnInit {
   //   order_status: 'Pending',
   // }
 
+  user = this.storageService.getInfo("userObj");
+  user_id = JSON.parse(this.user).id;
   newOrder: Order = {
     id: 0,
     price: 0,
@@ -36,9 +39,10 @@ export class OrderFormComponent implements OnInit {
     order_type: '',
     portfolio: [],
     order_status: 'Pending',
+    user_id: this.user_id
   }
 
-  constructor(private orderService : OrderService, private router: Router){}
+  constructor(private orderService : OrderService, private router: Router, private storageService: StorageService){}
 
   ngOnInit(){
     //this.products = this.orderService.getProducts();
