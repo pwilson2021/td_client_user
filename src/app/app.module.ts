@@ -25,6 +25,7 @@ import { PortfolioFormComponent } from './components/portfolio-form/portfolio-fo
 import { RegisterComponent } from './components/register/register.component';
 import { PortfolioListComponent } from './components/portfolio-list/portfolio-list.component';
 import { MarketDataComponent } from './components/market-data/market-data.component';
+import { TradeHistoryComponent } from './components/trade-history/trade-history.component';
 
 const icons = {
   PlusCircleFill
@@ -45,7 +46,8 @@ const icons = {
     PortfolioFormComponent,
     RegisterComponent,
     PortfolioListComponent,
-    MarketDataComponent
+    MarketDataComponent,
+    TradeHistoryComponent
   ],
   imports: [
     BrowserModule,

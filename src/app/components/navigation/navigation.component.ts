@@ -9,7 +9,7 @@ export class NavigationComponent implements OnInit {
 
   constructor() { }
 
-  menuItems = ['portfolio', 'orders', 'trade history'];
+  menuItems = ['portfolio', 'orders', 'trade_history'];
 
   ngOnInit(): void {
 

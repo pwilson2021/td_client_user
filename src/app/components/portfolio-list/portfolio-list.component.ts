@@ -1,3 +1,4 @@
+import { Location } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Portfolio } from 'src/app/domain/portfolio';
@@ -10,7 +11,7 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
 })
 export class PortfolioListComponent implements OnInit {
 
-  constructor(private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute) { }
+  constructor(private portfolioService: PortfolioService, private activatedRoute: ActivatedRoute, private location: Location) { }
 
   portfolios: Portfolio[] = []
 
@@ -25,5 +26,9 @@ export class PortfolioListComponent implements OnInit {
       let portfolio = this.portfolioService.getUserPortfolios();
       // this.portfolios = portfolio.find(p => p.id == this.id);
     });
+  }
+
+  backClicked() {
+    this.location.back();
   }
 }

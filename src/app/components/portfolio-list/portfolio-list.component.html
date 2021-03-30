@@ -3,16 +3,14 @@
 <div class="container col-6 mx-2 div">
   <div class="card card-body" style="border-radius: 10px; background: #fff;">
     <h1 *ngFor="let port of portfolios"> {{port.name}}</h1>
-    <ul class="list-unstyled">
-      <li class="card card-body mb-2" *ngFor="let order of portfolios">
-        <ul class="list-group">
-
-          <li class="list-group-item item">{{order.price}}</li>
-          <li class="list-group-item item">{{order.quantity}}</li>
-          <li class="list-group-item item">{{order.product}}</li>
-          <li class="list-group-item item">{{order.order_type}}</li>
-        </ul>
-      </li>
+    <ul class="list-unstyled" *ngFor="let order of portfolios">
+      <li class="list-group-item item mb-2" style="border-radius: 10px;">{{order.price}}</li>
+      <li class="list-group-item item mb-2" style="border-radius: 10px;">{{order.quantity}}</li>
+      <li class="list-group-item item mb-2" style="border-radius: 10px;">{{order.product}}</li>
+      <li class="list-group-item item mb-2" style="border-radius: 10px;">{{order.order_type}}</li>
     </ul>
+    <div class="form-group mt-5">
+      <button type="submit" (click)="backClicked()" class="btn btn-primary btn-block col-xs" style="border-radius: 10px;">Back</button>
+    </div>
   </div>
 </div>
