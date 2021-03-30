@@ -22,6 +22,7 @@ export class TopNavComponent implements OnInit {
     if (this.router.url.includes('dashboard')) this.pageTitle= 'Home'
       else if (this.router.url.includes('portfolio')) this.pageTitle= 'Portfolio'
       else if (this.router.url.includes('order')) this.pageTitle= 'Orders'
+      else if (this.router.url.includes('trade_history')) this.pageTitle= 'Trade History'
   }
 
   today: number = Date.now();
