@@ -13,7 +13,7 @@
             <label class="ml-2 mr-5 big">{{ firstName }}</label>
         </button>
         <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-            <button class="btn btn-info btn-block btn-lg big">Profile</button>
+            <button class="btn btn-info btn-block btn-lg big" (click)=profile()>Profile</button>
             <button class="btn btn-outline-warning btn-block btn-lg big" (click)=logout()>Adios</button>
         </div>
     </div>

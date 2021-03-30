@@ -56,5 +56,4 @@ export class UserService {
       console.log('Couldn\'t Register. Something went wrong!') // Can go to reporting service.
     });
   }
-
 }
