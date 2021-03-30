@@ -12,7 +12,7 @@
                     <th scope="col">Ticker</th>
                     <th scope="col">Quantity</th>
                     <th scope="col">Amount</th>
-                    <th scope="col">Value</th>
+                    <!-- <th scope="col">Value</th> -->
                     <th scope="col">Status</th>
                 </tr>
             </thead>
@@ -20,10 +20,10 @@
                 <tr *ngFor="let order of orders; index as i">
                     <td>{{order.id}}</td>
                     <td>{{order.order_type}}</td>
-                    <td>{{order.order_stock}}</td>
-                    <td>{{order.order_quantity}}</td>
+                    <td>{{order.ticker}}</td>
+                    <td>{{order.quantity}}</td>
                     <td>{{order.price}}</td>
-                    <td>{{order.order_value}}</td>
+                    <!-- <td>{{order.order_value}}</td> -->
                     <td>{{order.order_status}}</td>
                 </tr>
             </tbody>
