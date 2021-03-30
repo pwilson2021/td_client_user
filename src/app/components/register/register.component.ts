@@ -18,8 +18,8 @@ export class RegisterComponent implements OnInit {
   }
 
   user: User = {
-    firstname:'',
-    lastname:'',
+    first_name:'',
+    last_name:'',
     email: '',
     password:''
   };

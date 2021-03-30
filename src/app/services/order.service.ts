@@ -54,8 +54,7 @@ export class OrderService {
       if(this.response.code == 200){
         alert("Order placed");
         console.log(res);
-        
-        // this.router.navigate(['/orders']);
+        this.router.navigate(['/orders']);
       }
       else{
         console.log("Order creation failed");

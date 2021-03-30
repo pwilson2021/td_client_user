@@ -15,7 +15,7 @@
                 <form (ngSubmit)="submit(register)" #register="ngForm">
                   <div class="form-group">
                     <label for="firstName">First Name</label>
-                      <input type="text" [ngClass]="{ 'alert alert-danger': firstName.invalid && firstName.touched }" id="firstName" name="firstName" [(ngModel)]="user.firstname" #firstName="ngModel" class="form-control" minlength="3" required>
+                      <input type="text" [ngClass]="{ 'alert alert-danger': firstName.invalid && firstName.touched }" id="firstName" name="firstName" [(ngModel)]="user.first_name" #firstName="ngModel" class="form-control" minlength="1" required>
                       <ng-container  *ngIf="firstName.invalid && firstName.touched">
                         <small class="alert alert-danger" *ngIf="firstName.errors.required || firstName.errors.minlength"> First Name Invalid! </small>
                     </ng-container>
@@ -23,7 +23,7 @@
   
                     <div class="form-group">
                       <label for="lastName">Last Name</label>
-                      <input type="text" [ngClass]="{ 'alert alert-danger': lastName.invalid && lastName.touched }" id="lastName" name="lastName" [(ngModel)]="user.lastname" #lastName="ngModel" class="form-control" minlength="3" required>
+                      <input type="text" [ngClass]="{ 'alert alert-danger': lastName.invalid && lastName.touched }" id="lastName" name="lastName" [(ngModel)]="user.last_name" #lastName="ngModel" class="form-control" minlength="1" required>
                       <ng-container  *ngIf="lastName.invalid && lastName.touched">
                         <small class="alert alert-danger" *ngIf="lastName.errors.required || lastName.errors.minlength"> Last Name Invalid! </small>
                     </ng-container>
