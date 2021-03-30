@@ -14,7 +14,7 @@ export class MarketDataComponent implements OnInit {
   marketdata: any = [];
 
   ngOnInit() {
-    this.marketdata = this.marketdataService.getMarketData().subscribe(
+    this.marketdataService.getMarketData().subscribe(
       (res) => {this.marketdata = res;
         }    
   );

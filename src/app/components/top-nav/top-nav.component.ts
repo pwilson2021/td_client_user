@@ -27,6 +27,10 @@ export class TopNavComponent implements OnInit {
 
   today: number = Date.now();
   
+  profile(){
+    this.userService.logout();
+  }
+
   logout(){
     this.userService.logout();
   }
