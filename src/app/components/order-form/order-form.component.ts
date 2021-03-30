@@ -6,6 +6,7 @@ import {PortfolioService} from '../../services/portfolio.service';
 import {Order} from '../../domain/order';
 import { StorageService } from 'src/app/services/storage.service';
 import { Product } from 'src/app/domain/product';
+import { Portfolio } from 'src/app/domain/portfolio';
 
 @Component({
   selector: 'app-order-form',
@@ -15,8 +16,8 @@ import { Product } from 'src/app/domain/product';
 export class OrderFormComponent implements OnInit {
 
   order_type = ['BUY', 'SELL'];
-  products:Product[];
-  portfolio : any[];
+  products: Product[];
+  portfolio : Portfolio[];
 
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;

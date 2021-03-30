@@ -3,8 +3,19 @@
     <!-- <h1 class="pageTitle"></h1>  -->
     <!-- <p>Welcome, {{firstName}}</p> -->
     <!-- <div style="text-align: end; display: flex;"> -->
-        <p class="date">{{today | date}}</p>
-        <img src="../../../assets/avatar.png" alt="pic" class="image">
-        <button (click)=logout()>Adios</button>
+    <p class="date">{{today | date}}</p>
+    <!-- <img src="../../../assets/avatar.png" alt="pic" class="image"> -->
+    
+
+    <div ngbDropdown class="d-inline-block small">
+        <button class="btn btn-outline-primary btn-sm mr-5" id="dropdownBasic1" ngbDropdownToggle>
+            <img src="../../../assets/avatar.png" alt="pic" class="image">
+            <label class="ml-2 mr-5 big">{{ firstName }}</label>
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+            <button class="btn btn-info btn-block btn-lg big">Profile</button>
+            <button class="btn btn-outline-warning btn-block btn-lg big" (click)=logout()>Adios</button>
+        </div>
+    </div>
 </div>
 

@@ -15,9 +15,11 @@ div.card {
 
 .list-group-item .item{
   padding: 8px 16px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
+  float: left;
+  width: auto;
+  border: none;
+  display: block;
+  outline: 0;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
