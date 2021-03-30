@@ -16,6 +16,4 @@ export class DashboardstatsComponent implements OnInit {
   wallet = 300;
   order_number = 4
 
-  pageTitle= 'Dasboard';
-
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserService} from '../../services/user.service';
 import {StorageService} from '../../services/storage.service';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 
 
@@ -23,12 +23,13 @@ export class TopNavComponent implements OnInit {
       else if (this.router.url.includes('portfolio')) this.pageTitle= 'Portfolio'
       else if (this.router.url.includes('order')) this.pageTitle= 'Orders'
       else if (this.router.url.includes('trade_history')) this.pageTitle= 'Trade History'
+      else if (this.router.url.includes('profile')) this.pageTitle= 'User Profile'
   }
 
   today: number = Date.now();
   
   profile(){
-    this.userService.logout();
+    this.router.navigate(['/profile']);
   }
 
   logout(){
