@@ -24,19 +24,6 @@ const routes: Routes = [
   {path: 'portfolio-list/:id', component: PortfolioListComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'trade_history', component: TradeHistoryComponent}
-
-  // {path: 'portfolio', component: PortfolioComponent, children: [
-  //   {
-  //     path: 'portfolio-form',
-  //     component: PortfolioFormComponent
-  //   }
-  // ]},
-  // {path: 'orders', component: OrdersComponent, children: [
-  //   {
-  //     path: 'order-form',
-  //     component: OrderFormComponent
-  //   }
-  // ]}
 ];
 
 @NgModule({

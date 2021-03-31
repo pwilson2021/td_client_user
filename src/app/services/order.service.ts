@@ -51,8 +51,8 @@ export class OrderService {
   addOrder(order:Order){
     return this.http.post(`${this.baseUrl}/api/orders`, order).subscribe(res => {
       this.response = res;
-      if(this.response.code == 200){
-        alert("Order placed");
+      if(this.response.isOrderValidated === true){
+        //alert("Order placed");
         console.log(res);
         this.router.navigate(['/orders']);
       }
