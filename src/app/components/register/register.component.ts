@@ -25,7 +25,7 @@ export class RegisterComponent implements OnInit {
   };
 
   submit(register: NgForm){
-    console.log(this.user);
+    // console.log(this.user);
     this.userService.register(this.user);
   }
 
