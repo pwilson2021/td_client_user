@@ -18,15 +18,22 @@
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let order of orders; index as i">
+                <tr *ngFor="let order of orders; index as i"
+                [ngSwitch]= "order.order_status">
                     <td>{{i+1}}</td>
                     <td>{{order.id}}</td>
                     <td>{{order.order_type}}</td>
                     <td>{{order.ticker}}</td>
                     <td>{{order.quantity}}</td>
                     <td>{{order.price}}</td>
-                    <!-- <td>{{order.order_value}}</td> -->
-                    <td>{{order.order_status}}</td>
+                    <td [ngClass] = "{
+                        'completedClass': order.order_status === 'completed',
+                        'rejectedClass': order.order_status === 'rejected',
+                        'pendingClass': order.order_status === 'pending',
+                        'awaitingClass': order.order_status === 'awaiting',
+                        'holdingClass': order.order_status === 'holding',
+                        'partialClass': order.order_status === 'partially_fulfilled'
+                    }" >{{order.order_status}}</td>
                 </tr>
             </tbody>
         </table>

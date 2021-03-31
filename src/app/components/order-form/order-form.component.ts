@@ -22,10 +22,6 @@ export class OrderFormComponent implements OnInit {
   user = this.storageService.getInfo("userObj");
   user_id = JSON.parse(this.user).id;
 
-  // ngDoCheck(){
-  //   this.newOrder.product_id = +this.newOrder.product_id;
-  // }
-
   newOrder: Order = {
     //id: 0,
     price: 0,
