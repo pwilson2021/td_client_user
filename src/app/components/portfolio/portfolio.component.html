@@ -21,7 +21,7 @@
         </thead>
         <tbody>
           <tr *ngFor="let portfolio of portfolios, index as i">
-            <td>{{ i }}</td>
+            <td>{{ i + 1 }}</td>
             <td>{{portfolio.name}}</td>
             <td>
               <button (click)="viewPortfolio(portfolio.id)" class="btn btn-primary">View</button>
