@@ -52,9 +52,15 @@ export class OrderService {
     return this.http.post(`${this.baseUrl}/api/orders`, order).subscribe(res => {
       this.response = res;
       if(this.response.code == 200){
-        alert("Order placed");
+        //alert("Order placed");
         console.log(res);
-        this.router.navigate(['/orders']);
+        if(this.response.isOrderValidated === "true"){
+          this.router.navigate(['/orders']);
+
+        }
+        else{
+          alert("Order not valid. Create a new order");
+        }
       }
       else{
         console.log("Order creation failed");

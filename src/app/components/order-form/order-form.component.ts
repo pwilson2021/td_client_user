@@ -15,7 +15,7 @@ import { Portfolio } from 'src/app/domain/portfolio';
 })
 export class OrderFormComponent implements OnInit {
 
-  order_type = ['BUY', 'SELL'];
+  order_type = ['buy', 'sell'];
   products: Product[];
   portfolio : Portfolio[];
 
