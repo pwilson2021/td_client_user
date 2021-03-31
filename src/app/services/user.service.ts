@@ -41,10 +41,10 @@ export class UserService {
 
   register(user: User){
     return this.http.post(`${this.baseUrl}/api/users`, user).subscribe(res => {
-      //console.log(res);
+      console.log(res);
       this.response = res;
-      if(this.response.code == 200){
-        alert("Signup successful. Log In now");
+      if(this.response.code == "OK"){
+        alert(this.response.messages);
         this.router.navigate(['/login']);
       }
       else{
