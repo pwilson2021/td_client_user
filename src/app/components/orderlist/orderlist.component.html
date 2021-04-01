@@ -22,7 +22,7 @@
                 [ngSwitch]= "order.order_status">
                     <td>{{i+1}}</td>
                     <td>{{order.id}}</td>
-                    <td>{{order.order_type}}</td>
+                    <td>{{order.order_type.toUpperCase()}}</td>
                     <td>{{order.ticker}}</td>
                     <td>{{order.quantity}}</td>
                     <td>{{order.price}}</td>
@@ -33,7 +33,7 @@
                         'awaitingClass': order.order_status === 'awaiting',
                         'holdingClass': order.order_status === 'holding',
                         'partialClass': order.order_status === 'partially_fulfilled'
-                    }" >{{order.order_status}}</td>
+                    }" >{{order.order_status.toUpperCase()}}</td>
                 </tr>
             </tbody>
         </table>
